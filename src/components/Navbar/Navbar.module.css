@@ -1,0 +1,44 @@
+.navbarListContainer {
+  display: flex;
+  list-style: none; /* הורדת הנקודות של הרשימה */
+  margin: 0;
+  padding: 0;
+  gap: 40px; /* מרווח בין הפריטים */
+  justify-content: center; /* יישור לאמצע */
+  align-items: center;
+}
+
+.navbarListContainer li a {
+  text-decoration: none; /* הורדת קו תחתון */
+  color: var(--text-color);
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s ease; /* מעבר צבע חלק */
+}
+
+.navbarListContainer li a:hover {
+  color: var(--primary-color);
+}
+
+@media (max-width: 900px) {
+  .navbarListContainer {
+    display: none;
+  }
+
+  /* כשהתפריט פתוח נוסיף את המחלקה open */
+  .navbarListContainer.open {
+    position: fixed; /* תפריט צף */
+    top: 0;
+    left: 0; /* צמוד לצד ימין */
+    width: 200px; /* קבוע 200px */
+    height: 100%; /* כל הגובה */
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* שהתפריט יתחיל מצד ימין */
+    justify-content: flex-start;
+    padding: 110px 20px; /* רווח פנימי */
+    gap: 30px;
+    z-index: 100;
+  }
+}

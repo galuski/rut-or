@@ -1,49 +1,64 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html {
-  height: 100%;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* צבע המותג - טרקוטה חמימה (לכותרות בולטות, כפתורים ואלמנטים מרכזיים) */
+  --primary-color: #B0413E; 
+  
+  /* צבע רקע משני - גוון חולי/שמנת עדין מאוד שמרגיע את העין ועוטף את הצבע הראשי */
+  --secondary-color: #F8F5F1; 
+  
+  /* צבע טקסט - חום-אפור כהה במקום שחור נוקשה, שומר על קריאות ורכות במקביל */
+  --text-color: #3B3331; 
+  
+  /* רקע נקי - לבן עם נגיעה קטנה של חום כדי שלא יהיה "בוהק" מדי */
+  --bg-color: #FFFCFA; 
+  
+  /* צבע הדגשה עדין - גוון בהיר ורך של צבע הלוגו, מצוין לרקעים של כרטיסיות או גבולות */
+  --accent-light: #E8C8C7; 
 }
 
 * {
   box-sizing: border-box;
-  padding: 0;
+}
+
+html,
+body {
+  /* הפונט הכללי של האתר - Heebo */
+  font-family: var(--font-heebo), sans-serif;
+  
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  
+  /* הגדרת גלילה חלקה לכל האתר */
+  scroll-behavior: smooth; 
+  
   margin: 0;
+  padding: 0;
 }
 
-a {
-  color: inherit;
+/* החלת הפונט Noto Serif על כל הכותרות */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-noto-serif), serif;
+  font-weight: normal;
+  margin-top: 0;
+}
+
+/* עיצוב בסיסי לכפתורים וקישורים שמתפקדים ככפתורים */
+button, .btn {
+  font-family: inherit; 
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
   text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* אפקט ריחוף עדין לכפתורים */
+button:hover, .btn:hover {
+  background-color: #8c322f; /* גוון מעט כהה יותר של צבע המותג */
 }

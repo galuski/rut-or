@@ -1,0 +1,77 @@
+.aboutMeSection {
+  padding: 2rem 20px;
+  background-color: var(--bg-color); /* שימוש ברקע הנקי שלנו */
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center; /* ממרכז את התמונה והטקסט אחד מול השני */
+  gap: 60px; /* מרווח גדול ויפה בין התמונה לטקסט */
+}
+
+/* --- הגדרות אזור התמונה --- */
+.imageWrapper {
+  flex: 1; /* לוקח חצי מהרוחב */
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 20px; /* פינות מעוגלות לתחושה רכה */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08); /* צל עדין מאוד */
+  object-fit: cover;
+}
+
+/* --- הגדרות אזור הטקסט --- */
+.content {
+  flex: 1.2; /* לוקח קצת יותר מחצי מהרוחב כדי שלטקסט יהיה מקום */
+}
+
+.title {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+}
+
+.textBody p {
+  font-size: 1.15rem;
+  color: var(--text-color);
+  line-height: 1.8; /* מרווח שורות גדול לקריאה נוחה */
+  margin-bottom: 20px; /* מרווח בין פסקאות */
+}
+
+/* עיצוב מיוחד לפסקה האחרונה שתבלוט */
+.highlight {
+  font-size: 1.25rem !important;
+  font-weight: 500;
+  color: var(--primary-color) !important;
+  margin-top: 35px;
+  padding-right: 20px;
+  border-right: 3px solid var(--accent-light); /* קו אנכי עדין בצד ימין שנותן תחושה של ציטוט */
+}
+
+/* =========================================
+   התאמות למובייל (מסכים קטנים מ-768px)
+========================================= */
+@media (max-width: 768px) {
+  .aboutMeSection {
+    padding: 60px 20px;
+  }
+
+  .container {
+    flex-direction: column; /* הופך לטור במקום שורה */
+    gap: 40px;
+  }
+
+  .title {
+    font-size: 2rem;
+    text-align: center; /* מרכוז הכותרת במובייל */
+  }
+
+  .textBody p {
+    font-size: 1.05rem;
+  }
+}

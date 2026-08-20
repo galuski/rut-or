@@ -1,0 +1,59 @@
+.heroSection {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+  /* כאן הקסם: שכבה שחורה חצי שקופה (60% אטימות) שיושבת מעל התמונה */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/hero.jpeg');
+  
+  /* סידור התמונה כך שתכסה הכל בצורה פרופורציונלית מהמרכז */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  padding: 0 1rem;
+}
+
+.title {
+  font-size: 3.5rem; 
+  color: var(--primary-color); 
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 3rem;
+  color: var(--secondary-color); 
+}
+
+.thirdtitle {
+  font-size: 2rem;
+  color: var(--secondary-color); 
+  margin-bottom: 40px;
+}
+
+/* =========================================
+   התאמות למובייל (מסכים קטנים מ-768px)
+========================================= */
+@media (max-width: 768px) {
+  .heroSection {
+    /* הוספת קצת יותר פדינג בצדדים במובייל כדי שהטקסט לא ייגע בקצוות המסך */
+    padding: 0 1.5rem; 
+  }
+
+  .title {
+    font-size: 2.2rem; /* הקטנה משמעותית למובייל */
+  }
+
+  .subtitle {
+    font-size: 1.8rem;
+    margin-bottom: 10px; /* הוספתי קצת מרווח במידה והטקסט נשבר ל-2 שורות */
+  }
+
+  .thirdtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px; /* הקטנת המרווח התחתון לפני הכפתור */
+  }
+}

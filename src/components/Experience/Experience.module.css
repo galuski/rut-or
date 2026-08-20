@@ -1,0 +1,106 @@
+.experienceSection {
+  padding: 80px 16px;
+  /* אפקט הזכוכית (Glassmorphism) עובד הכי טוב כשיש רקע לא חלק לגמרי, 
+     אבל השארתי את המשתנה שלך כבסיס */
+  background-color: var(--accent-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: black;
+  margin-bottom: 60px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.card {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+
+  /* כאן הקסם של הצורה: למעלה ישר (או טיפה מעוגל) ולמטה עגול לגמרי כמו קערה */
+  border-radius: 5px 5px 120px 120px;
+
+  /* אפקט זכוכית */
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  
+  /* השוליים העליונים מדמים את השפה (Rim) של הכוס */
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-top: 2px solid rgba(255, 255, 255, 0.9); 
+
+  /* הצללות פנימיות שיוצרות תחושה של קערה חלולה ותלת-ממדית */
+  box-shadow: 
+    inset 0 -20px 40px rgba(255, 255, 255, 0.5),
+    inset 0 10px 20px rgba(0, 0, 0, 0.02),
+    0 15px 30px rgba(0, 0, 0, 0.05);
+
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+}
+
+/* אפקט "תהודה" (Resonance) במעבר עכבר - הכוס זוהרת ו"רועדת" קלות כלפי מעלה */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    inset 0 -20px 40px rgba(255, 255, 255, 0.7),
+    inset 0 10px 20px rgba(0, 0, 0, 0.02),
+    0 20px 40px rgba(0, 0, 0, 0.1),
+    0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+/* יצירת גל סאונד שמתפזר מתחת לקערה במעבר עכבר */
+.card::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0);
+  transition: all 0.6s ease-out;
+  pointer-events: none;
+}
+
+.card:hover::after {
+  width: 130%;
+  height: 50px;
+  bottom: -25px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  opacity: 0; /* הגל מתרחב ונעלם */
+}
+
+.icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 15px;
+  z-index: 2;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.text {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  z-index: 2;
+  color: var(--primary-color, #333);
+}

@@ -1,0 +1,69 @@
+.audienceSection {
+  padding: 80px 20px;
+  background-color: var(--bg-color);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+}
+
+.column {
+  flex: 1;
+  padding: 40px;
+  border-radius: 12px;
+  background-color: var(--secondary-color);
+}
+
+.columnNotFor {
+  background-color: #f2ecec; /* צבע קצת יותר אפרורי/שקט לעמודה הזו */
+}
+
+.titleGood {
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.titleBad {
+  color: #666;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list li {
+  font-size: 1.15rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
+  position: relative;
+  padding-right: 25px;
+}
+
+/* הוספת וי/איקס קטן לפני כל שורה דרך CSS */
+.column .list li::before {
+  content: '✓';
+  position: absolute;
+  right: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.columnNotFor .list li::before {
+  content: '—';
+  color: #999;
+}
