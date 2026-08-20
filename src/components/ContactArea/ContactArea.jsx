@@ -12,7 +12,12 @@ export default function ContactArea() {
     setStatus('שולח...');
 
     const formData = new FormData(e.target);
-    formData.append("access_key", "YOUR_ACCESS_KEY_HERE"); // המפתח של Web3Forms
+    
+    // השם ש-Web3Forms דורש, מקושר למשתנה הציבורי מה-env
+    formData.append("access_key", process.env.NEXT_PUBLIC_ACCESS_KEY_MAIL);
+    
+    // אופציונלי: הגדרת נושא ברור למייל שיתקבל
+    formData.append("subject", "פנייה חדשה מהאתר - סדנאות סאונד הילינג");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
