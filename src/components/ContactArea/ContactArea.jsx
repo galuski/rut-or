@@ -11,6 +11,7 @@ export default function ContactArea() {
     e.preventDefault();
     setStatus('שולח...');
 
+    console.log("My Access Key is:", process.env.NEXT_PUBLIC_ACCESS_KEY_MAIL);
     const formData = new FormData(e.target);
     
     // השם ש-Web3Forms דורש, מקושר למשתנה הציבורי מה-env
