@@ -11,19 +11,24 @@ export default function ContactArea() {
     e.preventDefault();
     setStatus('שולח...');
 
-    console.log("My Access Key is:", process.env.NEXT_PUBLIC_ACCESS_KEY_MAIL);
     const formData = new FormData(e.target);
     
-    // השם ש-Web3Forms דורש, מקושר למשתנה הציבורי מה-env
+    // הגדרות חובה עבור Web3Forms
     formData.append("access_key", process.env.NEXT_PUBLIC_ACCESS_KEY_MAIL);
-    
-    // אופציונלי: הגדרת נושא ברור למייל שיתקבל
     formData.append("subject", "פנייה חדשה מהאתר - סדנאות סאונד הילינג");
 
     try {
+      // המרת הנתונים ל-JSON לשליחה אמינה יותר
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: formData
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: json
       });
 
       const data = await response.json();
@@ -65,6 +70,12 @@ export default function ContactArea() {
                   <label htmlFor="phone">טלפון</label>
                   <input type="tel" id="phone" name="phone" placeholder="050-7552588" required />
                 </div>
+              </div>
+
+              {/* שדה אימייל שנוסף כדי למנוע חסימת ספאם */}
+              <div className={styles.inputGroup}>
+                <label htmlFor="email">אימייל</label>
+                <input type="email" id="email" name="email" placeholder="example@gmail.com" required />
               </div>
 
               <div className={styles.inputGroup}>
@@ -129,4 +140,3 @@ export default function ContactArea() {
     </section>
   );
 }
-
