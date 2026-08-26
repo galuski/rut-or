@@ -2,7 +2,7 @@ import styles from './AboutMe.module.css';
 
 export default function AboutMe() {
   return (
-    <section id="aboutme" className={styles.aboutMeSection}>
+    <section id='about' className={styles.aboutMeSection}>
       <div className={styles.container}>
         
         {/* אזור התמונה */}

@@ -1,0 +1,103 @@
+.section {
+  padding: 80px 20px;
+  background-color: #faf9f6; /* רקע חמים ונעים */
+  text-align: center;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: var(--font-noto-serif);
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 2.5rem;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  border-top: 6px solid #b0413e; /* פס צבע הטרקוטה בחלק העליון */
+  margin-bottom: 3rem;
+}
+
+.infoGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  color: #444;
+  font-family: var(--font-heebo);
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* ממרכז את התוכן במובייל */
+  gap: 0.5rem; /* רווח בין האייקון לטקסט */
+}
+
+.infoRow p {
+  margin: 0; /* מונע רווחים מיותרים שהדפדפן נותן לפסקאות */
+}
+
+/* התאמת גודל האייקון, במקרה וה-SVG המקורי גדול מדי */
+.icon {
+  flex-shrink: 0;
+}
+
+/* במסכים גדולים יותר - סידור בשורה */
+@media (min-width: 600px) {
+  .infoGroup {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+}
+
+.textBlock {
+  font-family: var(--font-heebo);
+  line-height: 1.6;
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #b0413e;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #b0413e;
+  color: white;
+  text-decoration: none;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  font-family: var(--font-heebo);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(176, 65, 62, 0.3);
+}
+
+.btn:hover {
+  background-color: #903532;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(176, 65, 62, 0.4);
+}
+
+.footerText {
+  font-family: var(--font-heebo);
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+}

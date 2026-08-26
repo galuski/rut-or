@@ -15,7 +15,7 @@ export default function Audience() {
           </ul>
         </div>
 
-        <div className={`${styles.column} ${styles.columnNotFor}`}>
+        <div id='audience' className={`${styles.column} ${styles.columnNotFor}`}>
           <h3 className={styles.titleBad}>למי זה פחות מתאים?</h3>
           <ul className={styles.list}>
             <li>למי שמחפש/ת טיפול רפואי או פתרון מיידי לבעיה.</li>

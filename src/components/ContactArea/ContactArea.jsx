@@ -105,12 +105,12 @@ export default function ContactArea() {
               </p>
             </div>
 
-            <div className={styles.socialLinks}>
+            {/* <div className={styles.socialLinks}>
               <a href="#" aria-label="WhatsApp">Wa</a>
               <a href="#" aria-label="Instagram">Ig</a>
               <a href="#" aria-label="LinkedIn">In</a>
               <a href="#" aria-label="Email">Em</a>
-            </div>
+            </div> */}
 
           </div>
 

@@ -5,33 +5,46 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  
-  /* כאן הקסם: שכבה שחורה חצי שקופה (60% אטימות) שיושבת מעל התמונה */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/hero.jpeg');
-  
+
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), var(--hero-bg);
   /* סידור התמונה כך שתכסה הכל בצורה פרופורציונלית מהמרכז */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  
+
   padding: 0 1rem;
 }
 
 .title {
-  font-size: 3.5rem; 
-  color: var(--primary-color); 
+  font-size: 3.5rem;
+  color: var(--primary-color);
   margin-bottom: 10px;
 }
 
 .subtitle {
   font-size: 3rem;
-  color: var(--secondary-color); 
+  color: var(--secondary-color);
 }
 
 .thirdtitle {
   font-size: 2rem;
-  color: var(--secondary-color); 
+  color: var(--secondary-color);
   margin-bottom: 40px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #b0413e;
+  color: white;
+  text-decoration: none;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  font-family: var(--font-heebo);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(176, 65, 62, 0.3);
 }
 
 /* =========================================
@@ -40,7 +53,7 @@
 @media (max-width: 768px) {
   .heroSection {
     /* הוספת קצת יותר פדינג בצדדים במובייל כדי שהטקסט לא ייגע בקצוות המסך */
-    padding: 0 1.5rem; 
+    padding: 0 1.5rem;
   }
 
   .title {

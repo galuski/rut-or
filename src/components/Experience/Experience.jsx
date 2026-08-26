@@ -15,7 +15,7 @@ export default function Experience() {
   ];
 
   return (
-    <section className={styles.experienceSection}>
+    <section id='experience' className={styles.experienceSection}>
       <div className={styles.container}>
         <h2 className={styles.title}>מה מחכה לך במפגש?</h2>
         <div className={styles.grid}>
