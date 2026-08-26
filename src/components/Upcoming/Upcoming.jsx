@@ -46,10 +46,10 @@ export default function Upcoming({
             <p className={styles.price}>המלצה לתשלום - {price} ש"ח</p>
           </div>
 
-          <a href={paymentLink} target="_blank" rel="noopener noreferrer" className={styles.btn}>
+          {/* <a href={paymentLink} target="_blank" rel="noopener noreferrer" className={styles.btn}>
             להרשמה ותשלום
-          </a>
-
+          </a> */}
+          <p>להרשמה - <strong>050-755-2588</strong></p>
           <p>ניתן ליצור קשר לצורך הזמנות לסשנים קבוצתיים אצלכם</p>
           <p>באהבה וחמלה</p>
         </div>
