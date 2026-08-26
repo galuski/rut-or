@@ -14,7 +14,7 @@ export default function Navbar({ menuOpen, setMenuOpen }) {
         <li><a href="#about" onClick={handleClick}>אודות</a></li>
         <li><a href="#experience" onClick={handleClick}>החוויה</a></li>
         <li><a href="#audience" onClick={handleClick}>קהל יעד</a></li>
-        <li><a href="#contact" onClick={handleClick}>הרשמה</a></li>
+        <li><a href="#upcoming-session" onClick={handleClick}>הרשמה</a></li>
       </ul>
     </nav>
   );
