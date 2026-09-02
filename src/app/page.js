@@ -19,16 +19,13 @@ async function getHomepageData() {
 
 // שים לב שהוספנו async לפונקציה כדי שנוכל להמתין לנתונים
 export default async function Home() {
+
   // קריאה לפונקציה ושמירת הנתונים במשתנה
   const homepageData = await getHomepageData();
 
   return (
     <main>
       <Header />
-      {/* 
-        מעבירים את הנתונים שמשכנו לתוך הקומפוננטות הרלוונטיות.
-        הסימן "?" (Optional Chaining) מוודא שהאתר לא יקרוס אם הלקוחה עדיין לא הזינה כלום
-      */}
       <Hero
         title={homepageData?.mainTitle}
         image={

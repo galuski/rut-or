@@ -1,6 +1,5 @@
 import styles from './Footer.module.css';
-// מומלץ להשתמש ב- react-icons לאייקונים מדויקים
-// import { FaWhatsapp, FaInstagram, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -24,10 +23,10 @@ export default function Footer() {
             </div>
 
             <div className={styles.actionButtons}>
-              <a 
-                href="https://wa.me/972507552588?text=היי%20רות,%20אשמח%20לפרטים" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://wa.me/972507552588?text=היי%20רות,%20אשמח%20לפרטים"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={styles.primaryBtn}
               >
                 דברו איתי בוואטסאפ
@@ -41,9 +40,9 @@ export default function Footer() {
 
         <div className={styles.bottomSection}>
           <div className={styles.legalLinks}>
-            <a href="/accessibility">נגישות</a>
-            <a href="/terms">תנאי שימוש</a>
-            <a href="/privacy">מדיניות פרטיות</a>
+            <Link href="/accessibility">נגישות</Link>
+            <Link href="/terms">תנאי שימוש</Link>
+            <Link href="/privacy">מדיניות פרטיות</Link>
           </div>
           <p className={styles.copyright}>
             © {new Date().getFullYear()} כל הזכויות שמורות לרות אור.
