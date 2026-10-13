@@ -1,5 +1,6 @@
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
+import { buildFileUrl } from '@sanity/asset-utils';
 
 import Hero from "../components/Hero/Hero";
 import About from "../components/About/About";
