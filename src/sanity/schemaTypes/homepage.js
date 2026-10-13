@@ -55,6 +55,24 @@ export const homepage = {
       name: 'sessionPaymentLink',
       title: 'קישור להרשמה ותשלום',
       type: 'url',
+    },
+    // --- התוספת החדשה לאזור הוידאו ---
+    {
+      name: 'videoSectionImage',
+      title: 'תמונה באזור הוידאו (יחס 16:9 מומלץ)',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: 'videoSectionUrl',
+      title: 'קובץ הוידאו',
+      type: 'file',
+      description: 'העלאת קובץ הוידאו שיוצג בנגן',
+      options: {
+        accept: 'video/*',
+      }
     }
   ]
 }

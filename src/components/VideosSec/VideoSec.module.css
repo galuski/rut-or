@@ -1,0 +1,60 @@
+.section {
+  padding: 5rem 1.5rem;
+  background-color: #fff; /* או כל צבע רקע שמתאים לפלטה שלך */
+  text-align: center;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: var(--font-noto-serif);
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 3rem;
+}
+
+/* מעטפת התמונה שומרת על יחס 16:9 */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* הקסם ששומר על היחס! */
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.image {
+  object-fit: cover;
+}
+
+/* אזור הוידאו */
+.videoWrapper {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  background-color: #000; /* מסגרת שחורה לנגן */
+}
+
+.videoPlayer {
+  width: 100%;
+  display: block; /* מונע רווח מוזר למטה */
+}
+
+/* גיבוי למקרה שעוד לא הועלה תוכן בסטודיו */
+.placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  color: #888;
+  font-family: var(--font-heebo);
+}

@@ -10,6 +10,7 @@ import AboutMe from "@/components/AboutMe/AboutMe";
 import ContactArea from "@/components/ContactArea/ContactArea";
 import Upcoming from "@/components/Upcoming/Upcoming";
 import { WhatsApp } from "@/components/WhatsApp/WhatsApp";
+import VideoSec from "@/components/VideosSec/VideoSec";
 
 // פונקציה למשיכת הנתונים מהמסד של Sanity
 async function getHomepageData() {
@@ -36,6 +37,10 @@ export default async function Home() {
       <AboutMe />
       <Experience />
       <Audience />
+      <VideoSec
+        imageSrc={homepageData?.videoSectionImage ? urlFor(homepageData.videoSectionImage).url() : null}
+        videoSrc={homepageData?.videoSectionUrl?.asset ? buildFileUrl(homepageData.videoSectionUrl.asset, { projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID, dataset: 'production' }) : null}
+      />
       <Upcoming
         location={homepageData?.sessionLocation}
         date={homepageData?.sessionDate}
