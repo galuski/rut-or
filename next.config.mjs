@@ -2,6 +2,7 @@
 const nextConfig = {
   output: "export",
   images: {
+    unoptimized: true, // השורה שפותרת את השגיאה
     remotePatterns: [
       {
         protocol: 'https',

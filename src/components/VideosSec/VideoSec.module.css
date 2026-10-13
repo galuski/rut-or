@@ -1,6 +1,6 @@
 .section {
   padding: 5rem 1.5rem;
-  background-color: #fff; /* או כל צבע רקע שמתאים לפלטה שלך */
+  background-color: #fff;
   text-align: center;
 }
 
@@ -16,14 +16,15 @@
   margin-bottom: 3rem;
 }
 
-/* מעטפת התמונה שומרת על יחס 16:9 */
+/* מעטפת התמונה - הוקטנה ומומכרזת */
 .imageWrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9; /* הקסם ששומר על היחס! */
+  max-width: 640px; /* מקביל לגודל של וידאו קלאסי כדי שלא יהיה ענק */
+  margin: 0 auto 3rem auto; /* ממורכז אוטומטית עם מרווח למטה */
+  aspect-ratio: 16 / 9; 
   border-radius: 12px;
   overflow: hidden;
-  margin-bottom: 3rem;
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
@@ -31,20 +32,23 @@
   object-fit: cover;
 }
 
-/* אזור הוידאו */
+/* אזור הוידאו - גודל נעים יותר לעין ושומר על פרופורציות */
 .videoWrapper {
   width: 100%;
-  max-width: 800px;
+  max-width: 640px; /* הוקטן מ-800px לגודל צפייה אלגנטי ונורמלי יותר */
   margin: 0 auto;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-  background-color: #000; /* מסגרת שחורה לנגן */
+  background-color: #000;
+  aspect-ratio: 16 / 9; /* מחזיק את המסגרת ביחס נכון גם לפני שהוידאו נטען */
 }
 
 .videoPlayer {
   width: 100%;
-  display: block; /* מונע רווח מוזר למטה */
+  height: 100%; /* מוודא שהוידאו ממלא את כל המעטפת */
+  object-fit: cover; /* מונע עיוות ומתיחה של הוידאו */
+  display: block; 
 }
 
 /* גיבוי למקרה שעוד לא הועלה תוכן בסטודיו */
@@ -57,4 +61,21 @@
   background-color: #f0f0f0;
   color: #888;
   font-family: var(--font-heebo);
+}
+
+/* --- רספונסיביות למובייל ולמסכים קטנים --- */
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 1rem; /* הקטנת הריווח הכללי בטלפונים */
+  }
+
+  .title {
+    font-size: 2rem; /* כותרת קצת יותר קטנה כדי שלא תשבור שורות סתם */
+    margin-bottom: 2rem;
+  }
+
+  .imageWrapper, .videoWrapper {
+    border-radius: 8px; /* פינות פחות מעוגלות במסכים קטנים נראות טוב יותר */
+    /* בטלפון הרוחב אוטומטית תופס 100% מהמסך בגלל ההגדרה למעלה, שזה מעולה */
+  }
 }
