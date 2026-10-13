@@ -15,12 +15,11 @@ import VideoSec from "@/components/VideosSec/VideoSec";
 // פונקציה למשיכת הנתונים מהמסד של Sanity
 async function getHomepageData() {
   const query = '*[_type == "homepage"][0]';
-  return client.fetch(query);
+  return client.fetch(query, {}, { cache: "no-store" });
 }
 
 // שים לב שהוספנו async לפונקציה כדי שנוכל להמתין לנתונים
 export default async function Home() {
-
   // קריאה לפונקציה ושמירת הנתונים במשתנה
   const homepageData = await getHomepageData();
 
@@ -38,8 +37,19 @@ export default async function Home() {
       <Experience />
       <Audience />
       <VideoSec
-        imageSrc={homepageData?.videoSectionImage ? urlFor(homepageData.videoSectionImage).url() : null}
-        videoSrc={homepageData?.videoSectionUrl?.asset ? buildFileUrl(homepageData.videoSectionUrl.asset, { projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID, dataset: 'production' }) : null}
+        imageSrc={
+          homepageData?.videoSectionImage
+            ? urlFor(homepageData.videoSectionImage).url()
+            : null
+        }
+        videoSrc={
+          homepageData?.videoSectionUrl?.asset
+            ? buildFileUrl(homepageData.videoSectionUrl.asset, {
+                projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+                dataset: "production",
+              })
+            : null
+        }
       />
       <Upcoming
         location={homepageData?.sessionLocation}
