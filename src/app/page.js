@@ -15,8 +15,8 @@ import VideoSec from "@/components/VideosSec/VideoSec";
 // פונקציה למשיכת הנתונים מהמסד של Sanity
 async function getHomepageData() {
   const query = '*[_type == "homepage"][0]';
-  // ירענן את הנתונים מאחורי הקלעים כל 10 שניות אם רות לחצה Publish
-  return client.fetch(query, {}, { next: { revalidate: 10 } });
+  // הגדרה ששומרת את המידע סטטית (force-cache) כדי למנוע את השגיאה הקודמת
+  return client.fetch(query, {}, { cache: "force-cache" });
 }
 
 // שים לב שהוספנו async לפונקציה כדי שנוכל להמתין לנתונים
