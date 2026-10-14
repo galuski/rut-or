@@ -38,7 +38,7 @@ export default function Upcoming({
               העלות לאירוע - כל אחד על פי ליבו וכיסו,<br />
               כי אני מאד מאמינה בפתיחת הלב, ורוצה להתחשב בכולם !
             </p> */}
-            <p className={styles.price}>{price} ש"ח</p>
+            <p className={styles.price}>{price}</p>
           </div>
 
           <p>להזמנה ופרטים נוספים - <strong>050-755-2588</strong></p>
