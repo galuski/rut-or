@@ -11,45 +11,37 @@ export default function Upcoming({
   return (
     <section className={styles.section} id="upcoming-session">
       <div className={styles.container}>
-        <h2 className={styles.title}>הסשן הקרוב</h2>
+        <h2 className={styles.title}>הזמנת אירועים</h2>
 
         <div className={styles.card}>
           <div className={styles.infoGroup}>
 
-            {/* מיקום */}
-            <div className={styles.infoRow}>
+            {/* <div className={styles.infoRow}>
               <Image src="/location.svg" alt="מיקום" width={24} height={24} className={styles.icon} />
               <p><strong>מיקום:</strong> {location}</p>
-            </div>
+            </div> */}
 
-            {/* תאריך */}
-            <div className={styles.infoRow}>
+            {/* <div className={styles.infoRow}>
               <Image src="/calendar.svg" alt="תאריך" width={24} height={24} className={styles.icon} />
               <p><strong>תאריך:</strong> {date}</p>
-            </div>
+            </div> */}
 
-            {/* שעה */}
-            <div className={styles.infoRow}>
+            {/* <div className={styles.infoRow}>
               <Image src="/clock.svg" alt="שעה" width={24} height={24} className={styles.icon} />
               <p><strong>שעה:</strong> {time}</p>
-            </div>
+            </div> */}
 
           </div>
 
           <div className={styles.textBlock}>
-            <p>אשמח ללוות אתכם בדרך של רגיעה ואיזון</p>
-            <br />
-            <p>
+            {/* <p>
               העלות לאירוע - כל אחד על פי ליבו וכיסו,<br />
               כי אני מאד מאמינה בפתיחת הלב, ורוצה להתחשב בכולם !
-            </p>
-            <p className={styles.price}>המלצה לתשלום - {price} ש"ח</p>
+            </p> */}
+            <p className={styles.price}>{price} ש"ח</p>
           </div>
 
-          {/* <a href={paymentLink} target="_blank" rel="noopener noreferrer" className={styles.btn}>
-            להרשמה ותשלום
-          </a> */}
-          <p>להרשמה - <strong>050-755-2588</strong></p>
+          <p>להזמנה ופרטים נוספים - <strong>050-755-2588</strong></p>
           <p>ניתן ליצור קשר לצורך הזמנות לסשנים קבוצתיים אצלכם</p>
           <p>באהבה וחמלה</p>
         </div>
